@@ -17,6 +17,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Cache project files
+        uses: actions/cache@v4
+        with:
+          path: .
+          key: ${{ runner.os }}-project-cache
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
